@@ -6,11 +6,10 @@ const Container = styled.div`
     height: 90%;
 `;
 
-const Message = () => {
+const Message = ({ children }) => {
     return (
         <Container>
-
-
+            {children}
         </Container>
     )
 }

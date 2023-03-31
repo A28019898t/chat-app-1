@@ -1,0 +1,10 @@
+https://giphy.com/stickers/ralphtest-3oFzlYuazAesniYNVe
+https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
+https://codesandbox.io/s/messenger-8s7qr
+https://github.com/ealush/emoji-picker-react/blob/master/src/components/body/Body.css
+https://codestus.com/posts/huong-dan-su-dung-usecallback-trong-react
+https://socket.io/docs/v4/client-installation/
+https://github.com/expressjs/cors#configuring-cors
+https://jsfiddle.net/Lf8fkhzk/
+https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+https://www.digitalocean.com/community/tutorials/css-cropping-images-object-fit

@@ -103,11 +103,10 @@ const Contact = ({ contacts, currentUser, changeChat }) => {
     const [currentUserSelected, setCurrentUserSelected] = useState();
 
     useEffect(() => {
-
-        console.log({ contacts });
         if (currentUser) {
             setCurrentUserName(currentUser.username);
             setCurrentUserAvatar(currentUser.avatarImage);
+            console.log(currentUser.avatarImage);
         }
     }, [currentUser, contacts]);
 

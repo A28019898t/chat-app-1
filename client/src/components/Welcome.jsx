@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Robot from '../assets/robot.gif'
+import Robot from '../assets/Bot4.gif'
 
 const Container = styled.div`
     display: flex;
@@ -9,8 +9,13 @@ const Container = styled.div`
     flex-direction: column;
     color: white;
 
-    img {
-        width: 20rem;
+    .logo {
+        img {
+            width: 25rem;
+            height: 25rem;
+            object-fit: none;
+            border-radius: 50%;
+        }
     }
     span {
         color: #4e0eff;
@@ -20,7 +25,9 @@ const Container = styled.div`
 const Welcome = ({ currentUser }) => {
     return (
         <Container>
-            <img src={Robot} alt="robot" />
+            <div className='logo'>
+                <img src={Robot} alt="robot" />
+            </div>
             <h1>
                 Welcome, <span>{currentUser.username}</span>
             </h1>

@@ -5,9 +5,10 @@ import { IoMdSend } from 'react-icons/io'
 import { BsEmojiSmileFill } from 'react-icons/bs';
 
 const Container = styled.div`
-    display: grid;
-    grid-template-columns: 5% 95%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     background-color: #080420;
     padding: 0 2rem;
     padding-bottom: 0.3rem;
@@ -45,7 +46,7 @@ const Container = styled.div`
     }
     .input-container {
         width: 100%;
-        border-radius: 2rem;
+        border-radius: 1.4rem;
         display: flex;
         align-items: center;
         background-color: #ffffff32;
@@ -68,15 +69,21 @@ const Container = styled.div`
         }
         button {
             padding: 0.3rem 2rem;
-            border-radius: 2rem;
+            border-radius: 1.4rem;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #9a86f3;
             border: none;
             cursor: pointer;
+            @media screen and (min-width: 720px) and (max-width: 1080px) {
+                padding: 0.3rem 1rem;
+                svg {
+                    font-size: 1rem;
+                }
+            }
             svg {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 color: white;
             }   
         }

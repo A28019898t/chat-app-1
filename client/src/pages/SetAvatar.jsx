@@ -105,11 +105,9 @@ const SetAvatar = () => {
                 avatarImage: avatars[selectedAvatar]
             });
 
-            console.log(data);
-
             if (data.status) {
+                user.avatarImage = avatars[selectedAvatar];
                 user.isAvatarImageSet = true;
-                user.avatarImage = data.avatarImage;
                 localStorage.setItem('chat-app-user', JSON.stringify(user));
                 navigate('/');
             } else {
@@ -141,9 +139,7 @@ const SetAvatar = () => {
             const user = JSON.parse(localStorage.getItem('chat-app-user'));
             console.log({ user });
         }
-    }, [selectedAvatar])
-
-    console.log({ avatars });
+    }, [selectedAvatar]);
 
     return (
         <>

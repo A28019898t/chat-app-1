@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { allUserRoute } from '../ultils/APIRoutes';
+import { allUserRoute, host } from '../ultils/APIRoutes';
 import Contact from '../components/Contact';
 import Welcome from '../components/Welcome';
 import ChatContainer from '../components/ChatContainer';
+import { io } from 'socket.io-client'
 
 const Container = styled.div`
     height: 100vh;
@@ -29,6 +30,7 @@ const Container = styled.div`
 `;
 
 const Chat = () => {
+    const socket = useRef();
     const [contacts, setContacts] = useState([]);
     const [currentUser, setCurrentUser] = useState(undefined);
     const [currentChat, setCurrentChat] = useState(undefined);
@@ -45,6 +47,13 @@ const Chat = () => {
             setIsLoading(false);
         }
     }, []);
+
+    useEffect(() => {
+        if (currentUser) {
+            socket.current = io(host);
+            socket.current.emit('add-user', currentUser._id);
+        }
+    }, [currentUser]);
 
     useEffect(() => {
         if (currentUser) {
@@ -84,7 +93,10 @@ const Chat = () => {
                         !isLoading && currentChat === undefined
                             ? <Welcome currentUser={currentUser} />
                             : currentChat
-                                ? <ChatContainer currentChat={currentChat} />
+                                ? <ChatContainer
+                                    currentChat={currentChat}
+                                    currentUser={currentUser}
+                                    socket={socket} />
                                 : ''
                     }
                 </div>
